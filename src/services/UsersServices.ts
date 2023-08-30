@@ -29,6 +29,12 @@ class UsersServices {
     return newUser;
   }
 
+  async index() {
+    const result = await this.usersRepository.findAll();
+
+    return result;
+  }
+
   async update({
     name,
     oldPassword,

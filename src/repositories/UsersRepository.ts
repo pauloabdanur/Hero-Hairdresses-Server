@@ -13,6 +13,16 @@ class UsersRepository {
     return result;
   }
 
+  async findAll() {
+    const result = await prisma.schedule.findMany({
+      orderBy: {
+        date: 'asc',
+      },
+    });
+
+    return result;
+  }
+
   async findUserByEmail(email: string) {
     const result = await prisma.users.findUnique({
       where: {

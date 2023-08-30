@@ -8,8 +8,14 @@ class UsersController {
     this.usersService = new UsersServices();
   }
 
-  index() {
-    //buscar todos
+  async index(request: Request, response: Response, next: NextFunction) {
+    try {
+      const result = await this.usersService.index();
+
+      return response.json(result);
+    } catch (error) {
+      next(error);
+    }
   }
   show() {
     //buscar somente um
