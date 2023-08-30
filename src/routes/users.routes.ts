@@ -17,11 +17,8 @@ class UsersRoutes {
       '/',
       this.usersController.store.bind(this.usersController)
     );
-    this.router.get(
-      '/',
-      this.authMiddleware.auth.bind(this.authMiddleware),
-      this.usersController.index.bind(this.usersController)
-    );
+
+    this.router.get('/', this.usersController.index.bind(this.usersController));
 
     this.router.put(
       '/',
