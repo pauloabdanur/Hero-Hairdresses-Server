@@ -33,4 +33,4 @@ app.use('/', (req, res) => {
   res.send('Welcome to the Hero HairDresses Server API');
 });
 
-app.listen(port, () => console.log('Server is running'));
+app.listen(port, () => console.log(`Server is running at port: ${port}`));
