@@ -14,11 +14,7 @@ class UsersRepository {
   }
 
   async findAll() {
-    const result = await prisma.schedule.findMany({
-      orderBy: {
-        date: 'asc',
-      },
-    });
+    const result = await prisma.users.findMany();
 
     return result;
   }
